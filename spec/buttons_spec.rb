@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Buttons' do
+describe Button do
 
   BUTTON_TYPES.each do |type|
     it type do
