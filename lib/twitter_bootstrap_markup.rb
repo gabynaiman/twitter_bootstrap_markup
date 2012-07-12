@@ -1,5 +1,5 @@
-require "twitter_bootstrap_markup/version"
+require 'twitter_bootstrap_markup/extension/hash'
+require 'twitter_bootstrap_markup/version'
+require 'twitter_bootstrap_markup/tag'
+require 'twitter_bootstrap_markup/button'
 
-module TwitterBootstrapMarkup
-  # Your code goes here...
-end
