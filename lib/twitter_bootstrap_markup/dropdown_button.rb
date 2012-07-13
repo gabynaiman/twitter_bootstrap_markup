@@ -9,12 +9,46 @@ module TwitterBootstrapMarkup
           append Tag.block :span, :class => 'caret'
         end)
         @ul = internal_append Tag.block(:ul, :class => 'dropdown-menu')
-        instance_eval &block
+        instance_eval &block if block_given?
       end
     end
 
     def append(element)
       @ul.append Tag.block(:li) { append element }
+    end
+
+    ButtonBase::TYPES.each do |type|
+      define_method type do
+        @button.send(type)
+        self
+      end
+    end
+
+    ButtonBase::SIZES.each do |size|
+      define_method size do
+        @button.send(size)
+        self
+      end
+    end
+
+    ButtonBase::TYPES.each do |type|
+      define_singleton_method(type) do |*args, &block|
+        self.new(*args, &block).send(type)
+      end
+    end
+
+    ButtonBase::SIZES.each do |size|
+      define_singleton_method(size) do |*args, &block|
+        self.new(*args, &block).send(size)
+      end
+    end
+
+    ButtonBase::TYPES.each do |type|
+      ButtonBase::SIZES.each do |size|
+        define_singleton_method("#{type}_#{size}") do |*args, &block|
+          self.new(*args, &block).send(type).send(size)
+        end
+      end
     end
 
   end
