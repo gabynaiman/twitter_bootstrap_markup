@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Tag do
 
   it 'Create simple tag' do
-    Tag.inline(:input, :type => 'text', :id => 'text_field').to_s.should eq '<input type="text" id="text_field" />'
+    Tag.inline(:input, :type => 'text', :id => 'text_field').to_s.should eq '<input type="text" id="text_field">'
   end
 
   it 'Create simple tag in steps' do
@@ -11,7 +11,7 @@ describe Tag do
     tag.attributes[:type] = 'button'
     tag.attributes[:value] = 'Click me'
 
-    tag.to_s.should eq '<input type="button" value="Click me" />'
+    tag.to_s.should eq '<input type="button" value="Click me">'
   end
 
   it 'Create block tag' do
@@ -35,6 +35,6 @@ describe Tag do
       append Tag.inline(:input, :type => 'text', :id => 'text_field')
     end
 
-    tag.to_s.should eq '<p><label for="text_field">Text field:</label><input type="text" id="text_field" /></p>'
+    tag.to_s.should eq '<p><label for="text_field">Text field:</label><input type="text" id="text_field"></p>'
   end
 end
