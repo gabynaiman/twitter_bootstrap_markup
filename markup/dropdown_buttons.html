@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container">
-    <h2>Link Buttons</h2>
+    <h2>Dropdown Buttons</h2>
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
@@ -22,61 +22,74 @@
         <tr>
             <td>Default</td>
             <td id="default">
-                <a class="btn" href="#">Click me</a>
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        Select option
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#1">Option 1</a>
+                        </li>
+                        <li>
+                            <a href="#2">Option 2</a>
+                        </li>
+                    </ul>
+                </div>
             </td>
         </tr>
         <tr>
             <td>Primary</td>
             <td id="primary">
-                <a class="btn btn-primary" href="#">Click me</a>
+                <button class="btn btn-primary">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Info</td>
             <td id="info">
-                <a class="btn btn-info" href="#">Click me</a>
+                <button class="btn btn-info">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Success</td>
             <td id="success">
-                <a class="btn btn-success" href="#">Click me</a>
+                <button class="btn btn-success">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Warning</td>
             <td id="warning">
-                <a class="btn btn-warning" href="#">Click me</a>
+                <button class="btn btn-warning">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Danger</td>
             <td id="danger">
-                <a class="btn btn-danger" href="#">Click me</a>
+                <button class="btn btn-danger">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Inverse</td>
             <td id="inverse">
-                <a class="btn btn-inverse" href="#">Click me</a>
+                <button class="btn btn-inverse">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Large</td>
             <td id="large">
-                <a class="btn btn-large" href="#">Click me</a>
+                <button class="btn btn-large">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Small</td>
             <td id="small">
-                <a class="btn btn-small" href="#">Click me</a>
+                <button class="btn btn-small">Click me</button>
             </td>
         </tr>
         <tr>
             <td>Mini</td>
             <td id="mini">
-                <a class="btn btn-mini" href="#">Click me</a>
+                <button class="btn btn-mini">Click me</button>
             </td>
         </tr>
         </tbody>

@@ -26,6 +26,7 @@ module TwitterBootstrapMarkup
 
     def append(element)
       @children << element
+      element
     end
 
     def html

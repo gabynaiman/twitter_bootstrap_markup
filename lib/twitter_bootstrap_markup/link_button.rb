@@ -1,13 +1,21 @@
 module TwitterBootstrapMarkup
   class LinkButton < ButtonBase
 
-    def initialize(title, url, attributes={})
-      super(:a, attributes.prepend!(:class, 'btn').merge(:href => url)) { append title }
+    def initialize(*args, &block)
+      text = args.shift unless block_given?
+      url = args.shift
+      attributes = args.shift || {}
+
+      if block_given?
+        super(:a, attributes.prepend!(:class, 'btn').merge(:href => url), &block)
+      else
+        super(:a, attributes.prepend!(:class, 'btn').merge(:href => url)) { append text }
+      end
     end
 
     ButtonBase::TYPES.each do |type|
-      define_singleton_method(type) do |title, url, attributes={}|
-        LinkButton.new(title, url, attributes.prepend!(:class, "btn-#{type}"))
+      define_singleton_method(type) do |text, url, attributes={}|
+        LinkButton.new(text, url, attributes.prepend!(:class, "btn-#{type}"))
       end
     end
 

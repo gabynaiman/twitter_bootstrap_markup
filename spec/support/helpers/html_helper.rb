@@ -4,6 +4,10 @@ class HtmlHelper
   end
 
   def self.html_for(file_name, css_path)
-    load(file_name).css(css_path).to_s
+    html = load(file_name).css(css_path).to_s.gsub(/\n/, '')
+    while html.index('  ')
+      html.gsub!('  ', ' ')
+    end
+    html.gsub('> ', '>')
   end
 end
