@@ -8,8 +8,4 @@ class Hash
     self[key] = self.has_key?(key) ? "#{self[key]} #{value}" : value
     self
   end
-
-  def to_markup
-    self.map{|key, value| "#{key}=\"#{value}\""}.join(' ')
-  end
 end

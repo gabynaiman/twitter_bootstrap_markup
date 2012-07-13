@@ -2,7 +2,7 @@ module TwitterBootstrapMarkup
   class LinkButton < Tag
 
     def initialize(title, url, attributes={})
-      super(:a, attributes.prepend!(:class, 'btn').merge(:href => url)) { title }
+      super(:a, attributes.prepend!(:class, 'btn').merge(:href => url)) { append title }
     end
 
     def self.default(title, url, attributes={})

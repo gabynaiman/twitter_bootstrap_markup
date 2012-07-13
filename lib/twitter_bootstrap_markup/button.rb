@@ -2,7 +2,7 @@ module TwitterBootstrapMarkup
   class Button < Tag
 
     def initialize(title, attributes={})
-      super(:button, attributes.prepend!(:class, 'btn')) { title }
+      super(:button, attributes.prepend!(:class, 'btn')) { append title }
     end
 
     def self.default(title, attributes={})
