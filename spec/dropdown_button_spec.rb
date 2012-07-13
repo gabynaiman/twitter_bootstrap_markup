@@ -37,15 +37,6 @@ describe DropdownButton do
     end
   end
 
-  it 'Mixed' do
-    tag = DropdownButton.new('Select option') do
-      append Link.new('Option 1', '#1')
-      append Link.new('Option 2', '#2')
-    end
-
-    tag.primary.large.to_s.should eq HtmlHelper.html_for('dropdown_buttons', "#mixed div")
-  end
-
   context 'Constructors' do
 
     Button::TYPES.each do |type|
@@ -67,6 +58,44 @@ describe DropdownButton do
         end
       end
     end
+  end
+
+  context 'Complex' do
+
+    it 'mixed' do
+      tag = DropdownButton.new('Select option') do
+        append Link.new('Option 1', '#1')
+        append Link.new('Option 2', '#2')
+      end
+
+      tag.primary.large.to_s.should eq HtmlHelper.html_for('dropdown_buttons', "#mixed div")
+    end
+
+    it 'image' do
+      tag = DropdownButton.new('Select option') do
+        append(Link.new('#1') do
+          append Icon.new('search')
+          append 'Option 1'
+        end)
+        append(Link.new('#2') do
+          append Icon.new('star')
+          append 'Option 2'
+        end)
+      end
+
+      tag.to_s.should eq HtmlHelper.html_for('dropdown_buttons', "#image div")
+    end
+
+    it 'divider' do
+      tag = DropdownButton.new('Select option') do
+        append Link.new('Option 1', '#1')
+        append_divider
+        append Link.new('Option 2', '#2')
+      end
+
+      tag.to_s.should eq HtmlHelper.html_for('dropdown_buttons', "#divider div")
+    end
+
   end
 
 end

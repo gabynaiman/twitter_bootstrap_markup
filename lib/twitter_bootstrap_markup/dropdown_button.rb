@@ -17,6 +17,10 @@ module TwitterBootstrapMarkup
       @ul.append Tag.block(:li) { append element }
     end
 
+    def append_divider
+      @ul.append Tag.block(:li, :class => 'divider')
+    end
+
     ButtonBase::TYPES.each do |type|
       define_method type do
         @button.send(type)
