@@ -8,7 +8,7 @@ describe DropdownButton do
       append Link.new('Option 2', '#2')
     end
 
-    tag.html.should eq HtmlHelper.html_for('dropdown_buttons', "#default div")
+    tag.to_s.should eq HtmlHelper.html_for('dropdown_buttons', "#default div")
   end
 
 end

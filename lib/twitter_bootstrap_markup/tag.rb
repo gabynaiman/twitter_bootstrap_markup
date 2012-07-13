@@ -29,17 +29,13 @@ module TwitterBootstrapMarkup
       element
     end
 
-    def html
+    def to_s
       attributes_markup = attributes.empty? ? '' : " #{attributes.map{|key, value| "#{key}=\"#{value}\""}.join(' ')}"
       if @is_block
         "<#{name}#{attributes_markup}>#{children.map(&:to_s).join}</#{name}>"
       else
         "<#{name}#{attributes_markup} />"
       end
-    end
-
-    def to_s
-      html
     end
 
   end

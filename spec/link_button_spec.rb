@@ -4,12 +4,12 @@ describe LinkButton do
 
   context 'Types' do
     it 'default' do
-      LinkButton.new('Click me', '#').html.should eq HtmlHelper.html_for('link_buttons', "#default a")
+      LinkButton.new('Click me', '#').to_s.should eq HtmlHelper.html_for('link_buttons', "#default a")
     end
 
     ButtonBase::TYPES.each do |type|
       it type do
-        LinkButton.send(type, 'Click me', '#').html.should eq HtmlHelper.html_for('link_buttons', "##{type} a")
+        LinkButton.send(type, 'Click me', '#').to_s.should eq HtmlHelper.html_for('link_buttons', "##{type} a")
       end
     end
   end
@@ -17,7 +17,7 @@ describe LinkButton do
   context 'Sizes' do
     ButtonBase::SIZES.each do |size|
       it size do
-        LinkButton.new('Click me', '#').send(size).html.should eq HtmlHelper.html_for('link_buttons', "##{size} a")
+        LinkButton.new('Click me', '#').send(size).to_s.should eq HtmlHelper.html_for('link_buttons', "##{size} a")
       end
     end
   end
