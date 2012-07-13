@@ -12,25 +12,5 @@ module TwitterBootstrapMarkup
       end
     end
 
-    ButtonBase::TYPES.each do |type|
-      define_singleton_method(type) do |*args, &block|
-        Button.new(*args, &block).send(type)
-      end
-    end
-
-    ButtonBase::SIZES.each do |size|
-      define_singleton_method(size) do |*args, &block|
-        Button.new(*args, &block).send(size)
-      end
-    end
-
-    ButtonBase::TYPES.each do |type|
-      ButtonBase::SIZES.each do |size|
-        define_singleton_method("#{type}_#{size}") do |*args, &block|
-          Button.new(*args, &block).send(type).send(size)
-        end
-      end
-    end
-
   end
 end

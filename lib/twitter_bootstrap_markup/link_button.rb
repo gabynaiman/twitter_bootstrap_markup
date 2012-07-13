@@ -13,11 +13,5 @@ module TwitterBootstrapMarkup
       end
     end
 
-    ButtonBase::TYPES.each do |type|
-      define_singleton_method(type) do |text, url, attributes={}|
-        LinkButton.new(text, url, attributes.prepend!(:class, "btn-#{type}"))
-      end
-    end
-
   end
 end

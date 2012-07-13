@@ -16,5 +16,26 @@ module TwitterBootstrapMarkup
         self
       end
     end
+
+    TYPES.each do |type|
+      define_singleton_method(type) do |*args, &block|
+        self.new(*args, &block).send(type)
+      end
+    end
+
+    SIZES.each do |size|
+      define_singleton_method(size) do |*args, &block|
+        self.new(*args, &block).send(size)
+      end
+    end
+
+    TYPES.each do |type|
+      SIZES.each do |size|
+        define_singleton_method("#{type}_#{size}") do |*args, &block|
+          self.new(*args, &block).send(type).send(size)
+        end
+      end
+    end
+
   end
 end
