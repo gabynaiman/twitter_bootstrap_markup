@@ -1,36 +1,14 @@
 module TwitterBootstrapMarkup
-  class Button < Tag
+  class Button < ButtonBase
 
     def initialize(title, attributes={})
       super(:button, attributes.prepend!(:class, 'btn')) { append title }
     end
 
-    def self.default(title, attributes={})
-      Button.new(title, attributes)
-    end
-
-    def self.primary(title, attributes={})
-      Button.new(title, attributes.prepend!(:class, 'btn-primary'))
-    end
-
-    def self.info(title, attributes={})
-      Button.new(title, attributes.prepend!(:class, 'btn-info'))
-    end
-
-    def self.success(title, attributes={})
-      Button.new(title, attributes.prepend!(:class, 'btn-success'))
-    end
-
-    def self.warning(title, attributes={})
-      Button.new(title, attributes.prepend!(:class, 'btn-warning'))
-    end
-
-    def self.danger(title, attributes={})
-      Button.new(title, attributes.prepend!(:class, 'btn-danger'))
-    end
-
-    def self.inverse(title, attributes={})
-      Button.new(title, attributes.prepend!(:class, 'btn-inverse'))
+    ButtonBase::TYPES.each do |type|
+      define_singleton_method(type) do |title, attributes={}|
+        Button.new(title, attributes.prepend!(:class, "btn-#{type}"))
+      end
     end
 
   end
