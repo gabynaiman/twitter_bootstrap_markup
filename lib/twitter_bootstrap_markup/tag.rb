@@ -29,6 +29,10 @@ module TwitterBootstrapMarkup
       element
     end
 
+    def prepend(element)
+      @children.insert 0, element
+    end
+
     def to_s
       attributes_markup = attributes.empty? ? '' : " #{attributes.map{|key, value| "#{key}=\"#{value}\""}.join(' ')}"
       if @is_block

@@ -6,6 +6,6 @@ class HtmlHelper
   def self.html_for(file_name, css_path)
     load(file_name).css(css_path).to_s.split(/\n/).inject do |result, line|
       (result || '') << line.lstrip
-    end
+    end.gsub('&amp;', '&')
   end
 end
