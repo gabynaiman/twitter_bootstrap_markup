@@ -2,12 +2,28 @@ require 'spec_helper'
 
 describe ControlGroup do
 
-  it 'text field' do
-    tag = ControlGroup.new('Field Label', :for => 'field_name') do
-      append Input.text :id => 'field_name'
+  context 'Types' do
+
+    it 'default' do
+      ControlGroup.new('Label') { append Input.text }.to_s.should eq HtmlHelper.html_for('control_groups', "#default .control-group")
     end
 
-    tag.to_s.should eq HtmlHelper.html_for('control_groups', "#text_field .control-group")
+    ControlGroup::TYPES.each do |type|
+      it type do
+        ControlGroup.new('Label') { append Input.text }.send(type).to_s.should eq HtmlHelper.html_for('control_groups', "##{type} .control-group")
+      end
+    end
+
+  end
+
+  context 'Constructors' do
+
+    ControlGroup::TYPES.each do |type|
+      it type do
+        ControlGroup.send(type, 'Label') { append Input.text }.to_s.should eq ControlGroup.new('Label') { append Input.text }.send(type).to_s
+      end
+    end
+
   end
 
 end

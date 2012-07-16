@@ -24,7 +24,8 @@ module TwitterBootstrapMarkup
       instance_eval &block if block_given?
     end
 
-    def append(element)
+    def append(element=nil, &block)
+      element = instance_eval(&block) if block_given?
       @children << element
       element
     end
@@ -34,7 +35,7 @@ module TwitterBootstrapMarkup
     end
 
     def to_s
-      attributes_markup = attributes.empty? ? '' : " #{attributes.map{|key, value| "#{key}=\"#{value}\""}.join(' ')}"
+      attributes_markup = attributes.empty? ? '' : " #{attributes.map{|key, value| "#{key}#{value ? "=\"#{value}\"" : ''}"}.join(' ')}"
       if @is_block
         "<#{name}#{attributes_markup}>#{children.map(&:to_s).join}</#{name}>"
       else
