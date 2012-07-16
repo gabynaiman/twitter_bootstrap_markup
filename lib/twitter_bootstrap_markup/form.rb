@@ -3,7 +3,11 @@ module TwitterBootstrapMarkup
     TYPES = [:vertical, :inline, :search, :horizontal]
 
     def initialize(attributes={}, &block)
-      super(:form, attributes, &block)
+      if block_given?
+        super(:form, attributes, &block)
+      else
+        super(:form, attributes) {}
+      end
     end
 
     TYPES.each do |type|
