@@ -18,6 +18,7 @@ require 'twitter_bootstrap_markup/help'
 require 'twitter_bootstrap_markup/control_group'
 require 'twitter_bootstrap_markup/form'
 require 'twitter_bootstrap_markup/fieldset'
+require 'twitter_bootstrap_markup/well'
 
 
 
