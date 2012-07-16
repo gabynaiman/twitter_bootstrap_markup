@@ -14,11 +14,11 @@ module TwitterBootstrapMarkup
     end
 
     def append(element)
-      @ul.append Tag.block(:li) { append element }
-    end
-
-    def append_divider
-      @ul.append Tag.block(:li, :class => 'divider')
+      if element.is_a? Divider
+        @ul.append element
+      else
+        @ul.append Tag.block(:li) { append element }
+      end
     end
 
     ButtonBase::TYPES.each do |type|

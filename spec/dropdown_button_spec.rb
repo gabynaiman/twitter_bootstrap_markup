@@ -89,7 +89,7 @@ describe DropdownButton do
     it 'divider' do
       tag = DropdownButton.new('Select option') do
         append Link.new('Option 1', '#1')
-        append_divider
+        append Divider.horizontal
         append Link.new('Option 2', '#2')
       end
 
