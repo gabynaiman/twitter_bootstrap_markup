@@ -1,8 +1,8 @@
 module TwitterBootstrapMarkup
   class Icon < Tag
 
-    def initialize(name)
-      super(:i, :class => "icon-#{name}") {}
+    def initialize(name, attributes={})
+      super(:i, attributes.prepend!(:class, "icon-#{name}")) {}
     end
 
     def white

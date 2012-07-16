@@ -1,20 +1,8 @@
 module TwitterBootstrapMarkup
-  class NavListContainer < Tag
-    alias :internal_append :append
+  class NavListContainer < NavContainer
 
     def initialize(attributes={}, &block)
-      super(:ul, attributes.prepend!(:class, 'nav nav-list')) do
-        instance_eval &block
-      end
-    end
-
-    def append(element=nil, &block)
-      element = instance_eval(&block) if block_given?
-      if element.is_a?(Tag) && element.name == :li
-        internal_append element
-      else
-        internal_append Tag.block(:li) { append element }
-      end
+      super(attributes.append!(:class, 'nav-list'), &block)
     end
 
   end

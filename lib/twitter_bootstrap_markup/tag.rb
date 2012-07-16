@@ -34,6 +34,16 @@ module TwitterBootstrapMarkup
       @children.insert 0, element
     end
 
+    def pull_right
+      attributes.append!(:class, 'pull-right')
+      self
+    end
+
+    def pull_left
+      attributes.append!(:class, 'pull-left')
+      self
+    end
+
     def to_s
       attributes_markup = attributes.empty? ? '' : " #{attributes.map{|key, value| "#{key}#{value ? "=\"#{value}\"" : ''}"}.join(' ')}"
       if @is_block
