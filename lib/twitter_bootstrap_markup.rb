@@ -26,6 +26,4 @@ require 'twitter_bootstrap_markup/nav_list_container'
 require 'twitter_bootstrap_markup/nav_list'
 require 'twitter_bootstrap_markup/nav_bar'
 require 'twitter_bootstrap_markup/table'
-
-
-
+require 'twitter_bootstrap_markup/label'
