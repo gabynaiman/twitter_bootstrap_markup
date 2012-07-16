@@ -14,7 +14,7 @@ module TwitterBootstrapMarkup
     end
 
     def append(element)
-      if element.is_a? Divider
+      if element.is_a?(Tag) && element.name == :li
         @ul.append element
       else
         @ul.append Tag.block(:li) { append element }

@@ -19,6 +19,9 @@ require 'twitter_bootstrap_markup/control_group'
 require 'twitter_bootstrap_markup/form'
 require 'twitter_bootstrap_markup/fieldset'
 require 'twitter_bootstrap_markup/well'
+require 'twitter_bootstrap_markup/nav_header'
+require 'twitter_bootstrap_markup/nav_list_container'
+require 'twitter_bootstrap_markup/nav_list'
 
 
 
