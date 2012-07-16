@@ -26,4 +26,35 @@ describe Input, '-> text' do
 
   end
 
+  context 'Prepend and Append' do
+
+    it 'prepend' do
+      tag = ExtendedInput.new do
+        append AddOn.new '$'
+        append Input.text
+      end
+
+      tag.to_s.should eq HtmlHelper.html_for('textboxes', "#prepend div")
+    end
+
+    it 'append' do
+      tag = ExtendedInput.new do
+        append Input.text
+        append Button.new 'Save'
+      end
+
+      tag.to_s.should eq HtmlHelper.html_for('textboxes', "#append div")
+    end
+
+    it 'prepend and append' do
+      tag = ExtendedInput.new do
+        append AddOn.new '$'
+        append Input.text
+        append Button.new 'Save'
+      end
+
+      tag.to_s.should eq HtmlHelper.html_for('textboxes', "#prepend_append div")
+    end
+  end
+
 end
