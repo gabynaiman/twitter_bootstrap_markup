@@ -10,5 +10,9 @@ module TwitterBootstrapMarkup
       self
     end
 
+    def self.white(*args)
+      self.new(*args).white
+    end
+
   end
 end
