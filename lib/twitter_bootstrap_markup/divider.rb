@@ -7,7 +7,7 @@ module TwitterBootstrapMarkup
           super(:li, :class => 'divider') {}
         when :vertical
           super(:li, :class => 'divider-vertical') {}
-        when :breadcrumbs
+        when :breadcrumb
           super(:span, :class => 'divider') { append '/' }
         else
           raise "Invalid divider type [#{type}]"
@@ -22,8 +22,8 @@ module TwitterBootstrapMarkup
       self.new :vertical
     end
 
-    def self.breadcrumbs
-      self.new :breadcrumbs
+    def self.breadcrumb
+      self.new :breadcrumb
     end
 
   end

@@ -10,8 +10,8 @@ describe Divider do
     Divider.vertical.to_s.should eq '<li class="divider-vertical"></li>'
   end
 
-  it 'breadcrumbs' do
-    Divider.breadcrumbs.to_s.should eq '<span class="divider">/</span>'
+  it 'breadcrumb' do
+    Divider.breadcrumb.to_s.should eq '<span class="divider">/</span>'
   end
 
 end
