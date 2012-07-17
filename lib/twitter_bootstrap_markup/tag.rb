@@ -2,6 +2,7 @@ module TwitterBootstrapMarkup
   class Tag
     include Tooltip
     include Popover
+    include SidePosition
 
     attr_reader :name
     attr_reader :attributes
@@ -35,16 +36,6 @@ module TwitterBootstrapMarkup
 
     def prepend(element)
       @children.insert 0, element
-    end
-
-    def pull_right
-      attributes.append!(:class, 'pull-right')
-      self
-    end
-
-    def pull_left
-      attributes.append!(:class, 'pull-left')
-      self
     end
 
     def to_s
