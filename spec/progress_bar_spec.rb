@@ -5,7 +5,7 @@ describe ProgressBar do
   context 'Types' do
 
     it 'default' do
-      ProgressBar.new(60).to_s.should eq HtmlHelper.html_for('progress_bars', "#default .progress")
+      ProgressBar.new(30).to_s.should eq HtmlHelper.html_for('progress_bars', "#default .progress")
     end
 
     ProgressBar::TYPES.each do |type|
