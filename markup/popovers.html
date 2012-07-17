@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twitter Bootstrap Markup</title>
+    <!--[if lt IE 9]>
+    <script src='http://html5shim.googlecode/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+    <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+</head>
+<body>
+<div class="container">
+    <h2>Popovers</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th class="span2">Name</th>
+            <th>Component</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Default</td>
+            <td id="default">
+                <p>Text with <a href="#" rel="popover" data-original-title="Title popover" data-content="This is a full explanation" data-placement="right">advanced</a> popover</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Left</td>
+            <td id="left">
+                <p>Text with <a href="#" rel="popover" data-original-title="Title popover" data-content="This is a full explanation" data-placement="left">advanced</a> popover</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Top</td>
+            <td id="top">
+                <p>Text with <a href="#" rel="popover" data-original-title="Title popover" data-content="This is a full explanation" data-placement="top">advanced</a> popover</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Bottom</td>
+            <td id="bottom">
+                <p>Text with <a href="#" rel="popover" data-original-title="Title popover" data-content="This is a full explanation" data-placement="bottom">advanced</a> popover</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="index.html">back to index</a>
+</div>
+<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script>
+    $("[rel=popover]").popover();
+</script>
+</body>
+</html>

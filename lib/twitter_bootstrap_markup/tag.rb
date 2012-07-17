@@ -1,6 +1,7 @@
 module TwitterBootstrapMarkup
   class Tag
     include Tooltip
+    include Popover
 
     attr_reader :name
     attr_reader :attributes

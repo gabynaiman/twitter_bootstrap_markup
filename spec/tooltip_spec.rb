@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Tag, '-> tooltip' do
+describe Tooltip do
 
   it 'default' do
     Link.new('simple', '#').tooltip('Simple tooltip').to_s.should eq HtmlHelper.html_for('tooltips', "#default a")
