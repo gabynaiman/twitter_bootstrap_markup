@@ -1,5 +1,7 @@
 module TwitterBootstrapMarkup
   class Tag
+    include Tooltip
+
     attr_reader :name
     attr_reader :attributes
     attr_reader :children
