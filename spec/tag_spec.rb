@@ -26,7 +26,7 @@ describe Tag do
   end
 
   it 'Create text container tag' do
-    Tag.block(:div, :style => 'width: 100%') { append 'Title' }.to_s.should eq '<div style="width: 100%">Title</div>'
+    Tag.block(:div, 'Title', :style => 'width: 100%').to_s.should eq '<div style="width: 100%">Title</div>'
   end
 
   it 'Create tag tree' do

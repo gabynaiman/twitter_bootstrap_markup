@@ -2,7 +2,7 @@ module TwitterBootstrapMarkup
   class AddOn < Tag
 
     def initialize(text)
-      super(:span, :class => 'add-on') { append text }
+      super(:span, text, :class => 'add-on')
     end
 
   end

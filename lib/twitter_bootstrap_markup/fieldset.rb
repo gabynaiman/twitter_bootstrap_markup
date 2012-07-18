@@ -11,7 +11,7 @@ module TwitterBootstrapMarkup
         super(:fieldset, attributes) {}
       end
 
-      prepend Tag.new(:legend) { append legend } if legend
+      prepend Tag.new(:legend, legend) if legend
     end
 
   end

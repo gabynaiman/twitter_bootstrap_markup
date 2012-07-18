@@ -7,7 +7,7 @@ describe Alert do
     Alert::TYPES.each do |type|
       it type do
         tag = Alert.new do
-          append Tag.block(:strong) { append 'Alert!' }
+          append Tag.block :strong, 'Alert!'
           append 'Message'
         end
 
@@ -17,7 +17,7 @@ describe Alert do
 
     it 'closable' do
       tag = Alert.new do
-        append Tag.block(:strong) { append 'Alert!' }
+        append Tag.block :strong, 'Alert!'
         append 'Message'
       end
 
@@ -31,12 +31,12 @@ describe Alert do
     Alert::TYPES.each do |type|
       it type do
         tag1 = Alert.send(type) do
-          append Tag.block(:strong) { append 'Alert!' }
+          append Tag.block :strong, 'Alert!'
           append 'Message'
         end
 
         tag2 = Alert.new do
-          append Tag.block(:strong) { append 'Alert!' }
+          append Tag.block :strong, 'Alert!'
           append 'Message'
         end
 
@@ -45,12 +45,12 @@ describe Alert do
 
       it "#{type}_closable" do
         tag1 = Alert.send("#{type}_closable") do
-          append Tag.block(:strong) { append 'Alert!' }
+          append Tag.block :strong, 'Alert!'
           append 'Message'
         end
 
         tag2 = Alert.new do
-          append Tag.block(:strong) { append 'Alert!' }
+          append Tag.block :strong, 'Alert!'
           append 'Message'
         end
 
@@ -60,12 +60,12 @@ describe Alert do
 
     it 'closable' do
       tag1 = Alert.closable do
-        append Tag.block(:strong) { append 'Alert!' }
+        append Tag.block :strong, 'Alert!'
         append 'Message'
       end
 
       tag2 = Alert.new do
-        append Tag.block(:strong) { append 'Alert!' }
+        append Tag.block :strong, 'Alert!'
         append 'Message'
       end
 

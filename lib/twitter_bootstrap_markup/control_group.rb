@@ -4,7 +4,7 @@ module TwitterBootstrapMarkup
 
     def initialize(label, attributes={}, &block)
       super(:div, :class => 'control-group') do
-        append Tag.block(:label, attributes.prepend!(:class, 'control-label')) { append label }
+        append Tag.block(:label, label, attributes.prepend!(:class, 'control-label'))
         append Tag.block(:div, :class => 'controls', &block)
       end
     end

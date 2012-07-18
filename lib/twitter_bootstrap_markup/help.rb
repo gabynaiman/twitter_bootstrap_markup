@@ -4,9 +4,9 @@ module TwitterBootstrapMarkup
     def initialize(type, text)
       case type
         when :inline
-          super(:span, :class => 'help-inline') { append text }
+          super(:span, text, :class => 'help-inline') {}
         when :block
-          super(:p, :class => 'help-block') { append text }
+          super(:p, text, :class => 'help-block') {}
         else
           raise "Invalid help type [#{type}]"
       end

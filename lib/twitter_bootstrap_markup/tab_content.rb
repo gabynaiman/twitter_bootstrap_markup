@@ -22,7 +22,7 @@ module TwitterBootstrapMarkup
       else
         attributes = {:class => 'tab-pane', :id => id}
         attributes.append!(:class, :active) if mode == :active
-        internal_append Tag.block(:div, attributes) { append element }
+        internal_append Tag.block(:div, element, attributes)
       end
     end
   end

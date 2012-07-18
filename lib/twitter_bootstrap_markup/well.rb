@@ -1,8 +1,9 @@
 module TwitterBootstrapMarkup
   class Well < Tag
 
-    def initialize(attributes={}, &block)
-      super(:div, attributes.prepend!(:class, 'well'), &block)
+    def initialize(*args, &block)
+      super(:div, *args, &block)
+      attributes.prepend!(:class, 'well')
     end
 
     def small

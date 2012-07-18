@@ -12,19 +12,21 @@ module TwitterBootstrapMarkup
       Tag.new(name, attributes)
     end
 
-    def self.block(name, attributes={}, &block)
+    def self.block(*args, &block)
       if block_given?
-        Tag.new(name, attributes, &block)
+        Tag.new(*args, &block)
       else
-        Tag.new(name, attributes) {}
+        Tag.new(*args) {}
       end
     end
 
-    def initialize(name, attributes={}, &block)
-      @name = name
-      @attributes = attributes
+    def initialize(*args, &block)
+      @name = args.shift
+      content = args.shift unless args.first.is_a?(Hash)
+      @attributes = args.shift || {}
       @children = []
-      @is_block = block_given?
+      @is_block = content || block_given?
+      append content if content
       instance_eval &block if block_given?
     end
 

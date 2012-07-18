@@ -13,7 +13,7 @@ module TwitterBootstrapMarkup
         internal_append element
       else
         attributes = mode == :active ? {:class => 'active'} : {}
-        internal_append Tag.block(:li, attributes) { append element }
+        internal_append Tag.block(:li, element, attributes)
       end
     end
 

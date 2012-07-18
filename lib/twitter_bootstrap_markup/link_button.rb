@@ -9,7 +9,7 @@ module TwitterBootstrapMarkup
       if block_given?
         super(:a, attributes.prepend!(:class, 'btn').merge(:href => url), &block)
       else
-        super(:a, attributes.prepend!(:class, 'btn').merge(:href => url)) { append text }
+        super(:a, text, attributes.prepend!(:class, 'btn').merge(:href => url)) {}
       end
     end
 

@@ -3,7 +3,7 @@ module TwitterBootstrapMarkup
     TYPES = [:success, :warning, :important, :info, :inverse]
 
     def initialize(text)
-      super(:span, :class => class_name.downcase) { append text }
+      super(:span, text, :class => class_name.downcase) {}
     end
 
     TYPES.each do |type|

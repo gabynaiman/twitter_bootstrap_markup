@@ -8,7 +8,7 @@ module TwitterBootstrapMarkup
       if block_given?
         super(:button, attributes.prepend!(:class, 'btn'), &block)
       else
-        super(:button, attributes.prepend!(:class, 'btn')) { append text }
+        super(:button, text, attributes.prepend!(:class, 'btn'))
       end
     end
 

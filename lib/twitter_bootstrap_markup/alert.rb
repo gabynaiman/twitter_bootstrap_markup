@@ -2,8 +2,9 @@ module TwitterBootstrapMarkup
   class Alert < Tag
     TYPES = [:warning, :info, :success, :danger]
 
-    def initialize(attributes={}, &block)
-      super(:div, attributes.prepend!(:class, 'alert'), &block)
+    def initialize(*args, &block)
+      super(:div, *args, &block)
+      attributes.prepend!(:class, 'alert')
     end
 
     TYPES.each do |type|

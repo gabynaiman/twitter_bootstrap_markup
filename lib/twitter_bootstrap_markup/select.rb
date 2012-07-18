@@ -15,7 +15,7 @@ module TwitterBootstrapMarkup
         append_options
       end
 
-      prepend Tag.new(:option, :value => '') { append prompt } if prompt
+      prepend Tag.new(:option, prompt, :value => '') {} if prompt
     end
 
     SIZES.each do |size|
@@ -43,7 +43,7 @@ module TwitterBootstrapMarkup
 
     def append_options_array(options, container=self)
       options.each do |option|
-        o = container.append Tag.block(:option, :value => option) { append option }
+        o = container.append Tag.block(:option, option, :value => option) {}
         o.attributes[:selected] = nil if option.to_s == @selected_value.to_s
       end
     end
@@ -57,7 +57,7 @@ module TwitterBootstrapMarkup
           group = append Tag.block(:optgroup, :label => key)
           append_options_hash(value, group)
         else
-          o = container.append Tag.block(:option, :value => value) { append key }
+          o = container.append Tag.block(:option, key, :value => value) {}
           o.attributes[:selected] = nil if value.to_s == @selected_value.to_s
         end
       end

@@ -8,11 +8,11 @@ describe Tab do
       nav.append NavTab.new('Tab 2', '#tab2')
       nav.append NavTab.new('#tab3') { append 'Tab 3' }
       content.append('tab1', :active) do
-        Tag.block(:i) { append 'Content for Tab 1' }
+        Tag.block :i, 'Content for Tab 1'
       end
       content.append 'tab2', 'Content for Tab 2'
       content.append('tab3') do
-        Tag.block(:strong) { append 'Content for Tab 3' }
+        Tag.block :strong, 'Content for Tab 3'
       end
     end
 
