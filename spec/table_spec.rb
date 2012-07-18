@@ -24,6 +24,10 @@ describe Table do
       end
     end
 
+    it 'combined' do
+      Table.bordered.condensed.striped { append Tag.block(:tr) }.to_s.should eq Table.new { append Tag.block(:tr) }.bordered.condensed.striped.to_s
+    end
+
   end
 
 end

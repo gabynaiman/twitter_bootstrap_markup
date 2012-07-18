@@ -12,8 +12,9 @@ module TwitterBootstrapMarkup
     end
 
     TYPES.each do |type|
-      define_method type do
+      define_method type do |&block|
         attributes.append!(:class, "table-#{type}")
+        instance_eval &block if block
         self
       end
     end
