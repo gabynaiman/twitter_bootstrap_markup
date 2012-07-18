@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Tab' do
+describe Tab do
 
   it 'default' do
     tag = Tab.new do

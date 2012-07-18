@@ -6,7 +6,7 @@ module TwitterBootstrapMarkup
         append do
           Tag.block(:h1) do
             append title
-            append Tag.block(:small) { append subtitle } if subtitle
+            append Tag.block(:small) { append "&nbsp;&nbsp;#{subtitle}" } if subtitle
           end
         end
 

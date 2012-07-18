@@ -7,7 +7,7 @@ describe PageHeader do
   end
 
   it 'title and subtitle' do
-    PageHeader.new('Page Title', 'Subtitle').to_s.should eq '<div class="page-header"><h1>Page Title<small>Subtitle</small></h1></div>'
+    PageHeader.new('Page Title', 'Subtitle').to_s.should eq '<div class="page-header"><h1>Page Title<small>&nbsp;&nbsp;Subtitle</small></h1></div>'
   end
 
 end
