@@ -31,4 +31,8 @@ describe TagBuilder do
     TagBuilder.button_primary_mini('Click').to_s.should eq Button.primary_mini('Click').to_s
   end
 
+  it 'submit primary' do
+    TagBuilder.submit_primary('Click').to_s.should eq Submit.primary('Click').to_s
+  end
+
 end

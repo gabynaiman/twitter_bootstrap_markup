@@ -29,6 +29,5 @@ module TwitterBootstrapMarkup
       self.class.name.split('::').last
     end
 
-
   end
 end

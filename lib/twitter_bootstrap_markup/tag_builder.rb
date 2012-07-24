@@ -11,7 +11,7 @@ module TwitterBootstrapMarkup
         tag_class.new(*args, &block)
       end
 
-      tag_class.methods(false).each do |method|
+      (tag_class.methods - Object.methods).each do |method|
         define_singleton_method "#{constant.to_s.underscore}_#{method}" do |*args, &block|
           tag_class.send(method, *args, &block)
         end
