@@ -37,4 +37,16 @@ describe Tag do
 
     tag.to_s.should eq '<p><label for="text_field">Text field:</label><input type="text" id="text_field"></p>'
   end
+
+  it 'Block arity' do
+    def inner_tag(text)
+      Tag.block(:strong, text)
+    end
+
+    tag = Tag.new(:div) do |t|
+      t.append inner_tag('Content')
+    end
+
+    tag.to_s.should eq '<div><strong>Content</strong></div>'
+  end
 end

@@ -27,7 +27,13 @@ module TwitterBootstrapMarkup
       @children = []
       @is_block = content || block_given?
       append content if content
-      instance_eval &block if block_given?
+      if block_given?
+        if block.arity == 0
+          instance_eval &block
+        else
+          yield(self)
+        end
+      end
     end
 
     def append(element=nil, &block)
