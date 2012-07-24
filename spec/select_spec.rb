@@ -24,7 +24,6 @@ describe Select do
               :optionB => 'B'
           }
       }
-      puts Select.new(options, :id => 'group_select').to_s
       Select.new(options, :id => 'group_select').to_s.should eq HtmlHelper.html_for('selects', "#group select")
     end
 

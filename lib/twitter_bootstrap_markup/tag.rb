@@ -27,17 +27,11 @@ module TwitterBootstrapMarkup
       @children = []
       @is_block = content || block_given?
       append content if content
-      if block_given?
-        if block.arity == 0
-          instance_eval &block
-        else
-          yield(self)
-        end
-      end
+      evaluate(&block) if block_given?
     end
 
     def append(element=nil, &block)
-      element = instance_eval(&block) if block_given?
+      element = evaluate(&block) if block_given?
       @children << element
       element
     end
@@ -52,6 +46,16 @@ module TwitterBootstrapMarkup
         "<#{name}#{attributes_markup}>#{children.map(&:to_s).join}</#{name}>"
       else
         "<#{name}#{attributes_markup}>"
+      end
+    end
+
+    private
+
+    def evaluate(&block)
+      if block.arity == 0
+        element = instance_eval(&block)
+      else
+        element = block.call(self)
       end
     end
 
