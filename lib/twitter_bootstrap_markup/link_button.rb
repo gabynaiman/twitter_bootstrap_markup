@@ -1,5 +1,6 @@
 module TwitterBootstrapMarkup
-  class LinkButton < ButtonBase
+  class LinkButton < Tag
+    include ButtonBase
 
     def initialize(*args, &block)
       text = args.shift unless block_given?

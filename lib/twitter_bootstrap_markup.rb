@@ -1,3 +1,5 @@
+require 'active_support/all'
+
 require 'twitter_bootstrap_markup/extension/hash'
 require 'twitter_bootstrap_markup/version'
 require 'twitter_bootstrap_markup/tooltip'
@@ -43,3 +45,5 @@ require 'twitter_bootstrap_markup/pagination'
 require 'twitter_bootstrap_markup/progress_bar'
 require 'twitter_bootstrap_markup/grid_row'
 require 'twitter_bootstrap_markup/grid_column'
+
+require 'twitter_bootstrap_markup/tag_builder'

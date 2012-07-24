@@ -1,4 +1,5 @@
 module TwitterBootstrapMarkup
-  class Badge < LabelBase
+  class Badge < Tag
+    include LabelBase
   end
 end

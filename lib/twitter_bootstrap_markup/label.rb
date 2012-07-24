@@ -1,4 +1,5 @@
 module TwitterBootstrapMarkup
-  class Label < LabelBase
+  class Label < Tag
+    include LabelBase
   end
 end
