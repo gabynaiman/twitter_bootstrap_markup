@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Twitter Bootstrap Markup</title>
+    <!--[if lt IE 9]>
+    <script src='http://html5shim.googlecode/svn/trunk/html5.js' type='text/javascript'></script>
+    <![endif]-->
+    <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+</head>
+<body>
+<div class="container">
+    <h2>Dropdown Links</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th class="span2">Name</th>
+            <th>Component</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Default</td>
+            <td id="default">
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Select option 
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#1">Option 1</a>
+                        </li>
+                        <li>
+                            <a href="#2">Option 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Image</td>
+            <td id="image">
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Select option 
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#1">
+                                <i class="icon-search"></i>
+                                Option 1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#2">
+                                <i class="icon-star"></i>
+                                Option 2
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Divider</td>
+            <td id="divider">
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Select option 
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#1">Option 1</a>
+                        </li>
+                        <li class="divider">
+                        <li>
+                            <a href="#2">Option 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="index.html">back to index</a>
+</div>
+<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+</body>
+</html>
