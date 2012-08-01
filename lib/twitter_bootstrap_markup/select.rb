@@ -1,6 +1,7 @@
 module TwitterBootstrapMarkup
   class Select < Tag
-    SIZES = [:mini, :small, :medium, :large, :xlarge, :xxlarge]
+    extend InputSize::ClassMethods
+    include InputSize::InstanceMethods
 
     def initialize(*args, &block)
       @options = args.shift || [] unless block_given?
@@ -16,19 +17,6 @@ module TwitterBootstrapMarkup
       end
 
       prepend Tag.new(:option, prompt, :value => '') {} if prompt
-    end
-
-    SIZES.each do |size|
-      define_method(size) do
-        attributes.append!(:class, "input-#{size}")
-        self
-      end
-    end
-
-    SIZES.each do |size|
-      define_singleton_method(size) do |*args, &block|
-        self.new(*args, &block).send(size)
-      end
     end
 
     private

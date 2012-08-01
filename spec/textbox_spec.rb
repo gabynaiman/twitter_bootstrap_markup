@@ -8,7 +8,7 @@ describe Input, '-> text' do
       Input.text.to_s.should eq HtmlHelper.html_for('textboxes', "#default input")
     end
 
-    Input::SIZES.each do |size|
+    InputSize::VALUES.each do |size|
       it size do
         Input.text.send(size).to_s.should eq HtmlHelper.html_for('textboxes', "##{size} input")
       end
@@ -18,7 +18,7 @@ describe Input, '-> text' do
 
   context 'Constructors' do
 
-    Input::SIZES.each do |size|
+    InputSize::VALUES.each do |size|
       it size do
         Input.send("text_#{size}").to_s.should eq Input.text.send(size).to_s
       end

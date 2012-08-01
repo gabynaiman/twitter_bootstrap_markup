@@ -1,17 +1,11 @@
 module TwitterBootstrapMarkup
   class Input < Tag
     TYPES = [:text, :hidden, :email, :password, :button, :checkbox, :radio]
-    SIZES = [:mini, :small, :medium, :large, :xlarge, :xxlarge]
+
+    include InputSize::InstanceMethods
 
     def initialize(type, attributes={}, &block)
       super(:input, {:type => type}.merge(attributes), &block)
-    end
-
-    SIZES.each do |size|
-      define_method(size) do
-        attributes.append!(:class, "input-#{size}")
-        self
-      end
     end
 
     TYPES.each do |type|
@@ -19,7 +13,7 @@ module TwitterBootstrapMarkup
         self.new(type, *args, &block)
       end
 
-      SIZES.each do |size|
+      InputSize::VALUES.each do |size|
         define_singleton_method("#{type}_#{size}") do |*args, &block|
           self.new(type, *args, &block).send(size)
         end

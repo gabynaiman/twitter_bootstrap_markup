@@ -39,7 +39,7 @@ describe Select do
 
   context 'Sizes' do
 
-    Select::SIZES.each do |size|
+    InputSize::VALUES.each do |size|
       it size do
         Select.new.send(size).to_s.should eq HtmlHelper.html_for('selects', "##{size} select")
       end
@@ -49,7 +49,7 @@ describe Select do
 
   context 'Constructors' do
 
-    Select::SIZES.each do |size|
+    InputSize::VALUES.each do |size|
       it size do
         Select.send(size).to_s.should eq Select.new.send(size).to_s
       end
