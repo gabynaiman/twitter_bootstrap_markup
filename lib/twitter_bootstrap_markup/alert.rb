@@ -15,7 +15,7 @@ module TwitterBootstrapMarkup
     end
 
     def closable
-      prepend Tag.new(:button, :class => 'close', 'data-dismiss' => 'alert') { append '&times' }
+      prepend Tag.new(:a, :class => 'close', 'data-dismiss' => 'alert') { append '&times' }
       self
     end
 
