@@ -3,7 +3,7 @@ module TwitterBootstrapMarkup
     alias :internal_append :append
 
     def initialize(attributes={}, &block)
-      super(:ul, attributes, &block)
+      super(:ul, attributes, &(block  || Proc.new{}))
     end
 
     def append(element=nil, mode=:inactive, &block)
