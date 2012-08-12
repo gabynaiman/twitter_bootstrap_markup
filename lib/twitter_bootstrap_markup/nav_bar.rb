@@ -1,13 +1,15 @@
 module TwitterBootstrapMarkup
   class NavBar < Tag
+    alias :internal_append :append
 
     def initialize(attributes={}, &block)
-      super(:div, attributes.prepend!(:class, 'navbar')){}
-      append do
-        Tag.new(:div, :class => 'navbar-inner') do
-          append Tag.new(:div, :class => 'container', &block)
-        end
-      end
+      super(:div, attributes.prepend!(:class, 'navbar')) {}
+      @container = Tag.block(:div, :class => 'container', &block)
+      internal_append Tag.block(:div, @container, :class => 'navbar-inner')
+    end
+
+    def append(*args, &block)
+      @container.append(*args, &block)
     end
 
     def top

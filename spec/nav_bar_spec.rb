@@ -24,4 +24,15 @@ describe NavBar do
     end
   end
 
+  it 'Usage without a constructor block' do
+    nav_bar_1 = NavBar.new do
+      append Brand.new 'Brand', '#'
+    end
+
+    nav_bar_2 = NavBar.new
+    nav_bar_2.append Brand.new 'Brand', '#'
+
+    nav_bar_1.to_s.should eq nav_bar_2.to_s
+  end
+
 end
