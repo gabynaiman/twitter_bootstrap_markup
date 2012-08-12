@@ -36,4 +36,13 @@ describe DropdownLink do
     tag.to_s.should eq HtmlHelper.html_for('dropdown_links', "#divider div")
   end
 
+  it 'nav item' do
+    tag = DropdownLink.new('Select option') do
+      append Link.new('Option 1', '#1')
+      append Link.new('Option 2', '#2')
+    end
+
+    tag.as_nav_item.to_s.should eq HtmlHelper.html_for('dropdown_links', "#nav_item .dropdown")
+  end
+
 end

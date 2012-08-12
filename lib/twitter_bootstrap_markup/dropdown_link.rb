@@ -21,5 +21,10 @@ module TwitterBootstrapMarkup
       end
     end
 
+    def as_nav_item
+      @name = :li
+      self
+    end
+
   end
 end
