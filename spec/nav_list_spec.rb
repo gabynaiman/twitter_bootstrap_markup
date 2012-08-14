@@ -18,7 +18,7 @@ describe NavList do
         end
       end
       append Divider.horizontal
-      append 'Help'
+      append '<li>Help</li>'
     end
 
     tag.to_s.should eq HtmlHelper.html_for('nav_lists', "#default div")
