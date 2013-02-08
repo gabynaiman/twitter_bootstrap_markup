@@ -26,4 +26,16 @@ describe Label do
 
   end
 
+  context 'Tag attributes' do
+
+    it 'custom attributes' do
+      Label.new('Text', 'data-attribute' => 'value').to_s.should eq "<span data-attribute=\"value\" class=\"label\">Text</span>"
+    end
+
+    it 'class attribute' do
+      Label.info('Text', class: 'test').to_s.should eq "<span class=\"label test label-info\">Text</span>"
+    end
+
+  end
+
 end

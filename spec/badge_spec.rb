@@ -26,4 +26,16 @@ describe Badge do
 
   end
 
+  context 'Tag attributes' do
+
+    it 'custom attributes' do
+      Badge.new(1, 'data-attribute' => 'value').to_s.should eq "<span data-attribute=\"value\" class=\"badge\">1</span>"
+    end
+
+    it 'class attribute' do
+      Badge.info(1, class: 'test').to_s.should eq "<span class=\"badge test badge-info\">1</span>"
+    end
+
+  end
+
 end

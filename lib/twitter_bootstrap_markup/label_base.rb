@@ -2,8 +2,8 @@ module TwitterBootstrapMarkup
   module LabelBase
     TYPES = [:success, :warning, :important, :info, :inverse]
 
-    def initialize(text)
-      super(:span, text, :class => class_name.downcase) {}
+    def initialize(text, attributes={})
+      super(:span, text, attributes.prepend!(:class, class_name.downcase)) {}
     end
 
     def self.included(base)
